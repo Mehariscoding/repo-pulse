@@ -70,6 +70,16 @@ repo-pulse/
 
 ---
 
+The big picture: "I used the GitHub API to pull data about any repo, wrote logic to score it, and displayed it nicely in the terminal."
+The four files:
+
+analyzer.py — "This is the brain. It hits the GitHub API, grabs commits, issues, contributors, and calculates things like bus factor and issue closure rate."
+display.py — "This takes the results and renders them in the terminal using a library called Rich — the colored boxes, progress bars, all that."
+cli.py — "This is the entry point. It uses Click to turn it into a proper command line tool so you can just type python cli.py and a link."
+export.py — "This lets you save the report as a JSON or Markdown file if you want to keep it."
+
+One algorithm to highlight: "The bus factor calculation was interesting — I sort contributors by commits, then keep adding them up until I hit 80% of all commits. However many people that took is the bus factor. Flask needed 9 people, my own repo needed 1."
+
 ## License
 
 MIT
