@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "repo-pulse"
+version = "0.1.0"
+description = "GitHub repository health analyzer — bus factor, issue velocity, commit trends and more."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["github", "cli", "devtools", "analytics", "open-source"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.7",
+    "click>=8.1",
+]
+
+[project.scripts]
+repo-pulse = "repo_pulse.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/repo-pulse"
+"Bug Tracker" = "https://github.com/yourusername/repo-pulse/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
